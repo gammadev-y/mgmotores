@@ -479,73 +479,71 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
       
+      // Function to remove invalid class on input
+      function removeInvalidClass(event) {
+        event.target.classList.remove('invalid');
+      }
+      
       // Custom validation function
       function validateForm() {
-        // Reset custom validity messages
-        nameInput.setCustomValidity('');
-        emailInput.setCustomValidity('');
-        phoneInput.setCustomValidity('');
-        messageInput.setCustomValidity('');
+        // Reset styles for all fields
+        const allInputs = [nameInput, emailInput, phoneInput, messageInput];
+        allInputs.forEach(input => {
+          input.classList.remove('invalid');
+        });
+        
+        // Track invalid fields
+        const invalidFields = [];
         
         // Get selected contact preference
         const selectedPreferenceElement = document.querySelector('input[name="contactPreference"]:checked');
-        const selectedPreference = selectedPreferenceElement ? selectedPreferenceElement.value : 'email'; // default to email if none selected
+        const selectedPreference = selectedPreferenceElement ? selectedPreferenceElement.value : 'email';
         
         // 1. Validate name field (always required)
         if (!nameInput.value.trim()) {
-          nameInput.setCustomValidity('Preencha este campo');
-          nameInput.reportValidity();
-          nameInput.focus();
-          return false;
+          nameInput.classList.add('invalid');
+          invalidFields.push(nameInput);
         } else if (nameInput.value.trim().length < 2) {
-          nameInput.setCustomValidity('O nome deve ter pelo menos 2 caracteres');
-          nameInput.reportValidity();
-          nameInput.focus();
-          return false;
+          nameInput.classList.add('invalid');
+          invalidFields.push(nameInput);
         }
         
         // 2. Validate contact field based on preference
         if (selectedPreference === 'email') {
-          // Only validate email when it's the preferred contact method
           if (!emailInput.value.trim()) {
-            emailInput.setCustomValidity('Preencha este campo');
-            emailInput.reportValidity();
-            emailInput.focus();
-            return false;
+            emailInput.classList.add('invalid');
+            invalidFields.push(emailInput);
           } else {
             // Check email format
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(emailInput.value.trim())) {
-              emailInput.setCustomValidity('Insira um email válido');
-              emailInput.reportValidity();
-              emailInput.focus();
-              return false;
+              emailInput.classList.add('invalid');
+              invalidFields.push(emailInput);
             }
           }
         } else if (selectedPreference === 'phone') {
-          // Only validate phone when it's the preferred contact method
           if (!phoneInput.value.trim()) {
-            phoneInput.setCustomValidity('Preencha este campo');
-            phoneInput.reportValidity();
-            phoneInput.focus();
-            return false;
+            phoneInput.classList.add('invalid');
+            invalidFields.push(phoneInput);
           } else {
             // Check phone format
             const phoneRegex = /^[+\d\s\-()]+$/;
             if (!phoneRegex.test(phoneInput.value.trim())) {
-              phoneInput.setCustomValidity('Insira um número de telefone válido');
-              phoneInput.reportValidity();
-              phoneInput.focus();
-              return false;
+              phoneInput.classList.add('invalid');
+              invalidFields.push(phoneInput);
             }
           }
         }
         
         // 3. Validate message field (always required)
         if (!messageInput.value.trim()) {
-          messageInput.setCustomValidity('Preencha este campo');
-          messageInput.reportValidity();
-          messageInput.focus();
+          messageInput.classList.add('invalid');
+          invalidFields.push(messageInput);
+        }
+        
+        // If there are invalid fields, focus on the first one
+        if (invalidFields.length > 0) {
+          invalidFields[0].focus();
           return false;
         }
         
@@ -558,6 +556,12 @@ document.addEventListener('DOMContentLoaded', () => {
         input.addEventListener('change', updateContactValidation);
       });
       
+      // Add event listeners to remove invalid class when user types
+      nameInput.addEventListener('input', removeInvalidClass);
+      emailInput.addEventListener('input', removeInvalidClass);
+      phoneInput.addEventListener('input', removeInvalidClass);
+      messageInput.addEventListener('input', removeInvalidClass);
+      
       // Initialize validation state
       updateContactValidation();
       
@@ -566,8 +570,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Perform validation
         if (!validateForm()) {
-          // If validation fails, let the browser show our custom messages
-          return;
+          // If validation fails, stop form submission
+          return false;
         }
         
         // Get form elements
@@ -649,9 +653,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Show success message
             successMessage.style.display = 'block';
-            
-            // Reset form
-            contactForm.reset();
+
             
             // Clear custom validity messages
             nameInput.setCustomValidity('');

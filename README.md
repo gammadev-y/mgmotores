@@ -1,77 +1,48 @@
-# MGMotores - Refactored Website
+MGMotores - Official Website
 
-This is a refactored version of the MGMotores website, converted from React to a simpler implementation using only HTML, CSS, and JavaScript.
+This repository contains the source code for the official website of MGMotores, a company specializing in the installation and maintenance of water pumping systems. The project is a modern, single-page application designed to inform potential clients about services and products, and to generate qualified leads through an interactive budget assistant.
+About The Project
 
-## Project Structure
+The primary goal of this website is to provide a clean, professional online presence for MGMotores. It replaces a simple contact form with a smart, guided "Budget Assistant" that helps users specify their needs for domestic, pool, or agricultural water systems. This process provides the company with detailed, high-quality information, enabling faster and more accurate quotes.
 
-```
-refactored/
-├── index.html
-├── styles/
-│   ├── main.css
-│   ├── components.css
-│   └── sections.css
-├── scripts/
-│   └── main.js
-├── package.json
-└── README.md
-```
+The project also includes a simple backend system for a few administrators to manage the product catalog, associated images, and promotional banners displayed on the site.
+Key Features
 
-## Key Changes Made
+    Responsive Single-Page Design: Fully functional and visually appealing on all devices, from mobile phones to desktops.
 
-1. **Removed React dependencies**: All React components have been converted to semantic HTML
-2. **Simplified state management**: Used vanilla JavaScript for interactivity instead of React hooks
-3. **Separated concerns**: CSS is now in separate files rather than being embedded in JSX
-4. **Maintained functionality**: All interactive elements work the same way as in the original
-5. **Preserved design**: Kept the same visual design and layout
+    Dynamic Product Showcase: Product information is fetched directly from a database, allowing for easy updates without changing the site's code.
 
-## Features
+    Interactive Budget Assistant: A guided form that dynamically changes its questions based on the user's selected application type (Domestic, Pool, or Agriculture) to gather precise requirements.
 
-- Responsive navigation with mobile menu
-- Banner system with localStorage persistence
-- Smooth scrolling to sections
-- Product showcase
-- Services display
-- Calculator for pump recommendations
-- Contact form with validation
-- Footer with quick links
+    Admin Functionality: A secure area for administrators to log in and perform CRUD (Create, Read, Update, Delete) operations on products, banners, and product images.
 
-## Setup Instructions
+    Cloud-Based Backend: Leverages a modern BaaS (Backend as a Service) platform for database, authentication, and file storage, ensuring scalability and security.
 
-1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+Technology Stack
 
-2. **Start the development server**:
-   ```bash
-   npm start
-   ```
-   The website will be available at http://localhost:3000
+This project combines a classic static frontend with a modern, cloud-based backend for a robust and efficient solution.
+Frontend
 
-3. **Build for production**:
-   ```bash
-   npm run build
-   ```
-   The built files will be in the `dist` directory
+    HTML5: For the core structure and content of the website.
 
-4. **Preview the production build**:
-   ```bash
-   npm run preview
-   ```
+    CSS3: For all styling, layout, and responsiveness.
 
-## Browser Support
+    JavaScript (ES6+): For all client-side logic, interactivity, DOM manipulation, and communication with the Supabase backend.
 
-This website uses modern JavaScript features and CSS properties. For older browsers, you may need to add polyfills or use a transpiler like Babel.
+Backend & Database (BaaS)
 
-## Future Improvements
+    Supabase: The all-in-one backend platform providing:
 
-- Add server-side form handling for the contact form
-- Implement the download feature for calculator results
-- Add database integration for products and banners
-- Improve accessibility with better ARIA attributes
-- Add loading states for better UX
+        Supabase Postgres DB: A robust, scalable SQL database for storing all application data (products, banners, product_images).
 
-## License
+        Supabase Auth: Handles authentication for the three administrator accounts, secured with Row Level Security (RLS) policies.
 
-This project is licensed under the MIT License.
+        Supabase Storage: Used for hosting and serving all product images.
+
+        Supabase APIs: Auto-generated APIs for secure interaction between the frontend and the database.
+
+Hosting & Deployment
+
+    Version Control: Git
+
+    Code Repository: GitHub
