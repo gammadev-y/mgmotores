@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MGMotores - Soluções de Bombagem de Água</title>
+    <meta name="description" content="Especialistas em soluções de bombagem de água para habitações, piscinas e agricultura em todo o país">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/sections.css">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <!-- Banner (will be shown dynamically) -->
+    <div id="banner" class="banner hidden">
+      <div class="banner-content">
+        <p id="banner-text">Promoção especial por tempo limitado!</p>
+        <button id="dismiss-banner" class="banner-dismiss">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navigation" class="navigation">
+      <div class="navigation-container">
+        <div class="navigation-brand" id="navigation-brand">
+          <i class="fas fa-tint navigation-icon"></i>
+          <span class="navigation-title">MGMotores</span>
+        </div>
+        
+        <div class="navigation-menu desktop">
+          <button class="navigation-link" data-scroll-to="sobre">Sobre Nós</button>
+          <button class="navigation-link" data-scroll-to="servicos">Serviços</button>
+          <button class="navigation-link" data-scroll-to="produtos">Produtos</button>
+          <button class="navigation-link" data-scroll-to="contacto">Contacto</button>
+          <button class="navigation-link" id="admin-link" style="display: none;">Admin</button>
+        </div>
+        
+        <button id="mobile-menu-toggle" class="navigation-mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      
+      <div id="mobile-menu" class="navigation-mobile-menu hidden">
+        <div class="navigation-mobile-content">
+          <div class="navigation-mobile-header">
+            <div class="navigation-brand">
+              <i class="fas fa-tint navigation-icon"></i>
+              <span class="navigation-title">MGMotores</span>
+            </div>
+            <button id="mobile-menu-close" class="navigation-mobile-close">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="navigation-mobile-links">
+            <button class="navigation-mobile-link" data-scroll-to="sobre">Sobre Nós</button>
+            <button class="navigation-mobile-link" data-scroll-to="servicos">Serviços</button>
+            <button class="navigation-mobile-link" data-scroll-to="produtos">Produtos</button>
+            <button class="navigation-mobile-link" data-scroll-to="contacto">Contacto</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-background">
+        <div class="hero-overlay"></div>
+      </div>
+      
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Soluções Bombagem Água
+          </h1>
+          
+          <div class="hero-description-box">
+            <p class="hero-description"> Garantimos sistemas de bombagem fiáveis.</p>
+            <p class="hero-description"> Instalação e manutenção.</p>
+            <p class="hero-description"> A sua tranquilidade é a nossa prioridade.</p>
+          </div>
+          <button id="contact-button" class="hero-button"><i class="fas fa-phone-alt hero-button-icon"></i>Contacte-nos</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about">
+      <div class="about-container">
+        <div class="section-header">
+          <h2 class="section-title">A Nossa História</h2>
+          <div class="section-divider"></div>
+        </div>
+        
+        <div class="about-content">
+          <div class="about-image-container">
+            <img src="Resources/Generated Image August 28, 2025 - 5_50PM.jpeg" 
+                 alt="Instalação profissional de sistemas de água" 
+                 class="about-image">
+          </div>
+          
+          <div class="about-text">
+            <h3 class="about-subtitle">Especialistas em Bombagem de Água</h3>
+            
+            <p class="about-description">
+              A MGMotores é uma empresa portuguesa especializada em soluções de bombagem de água, 
+              com anos de experiência no mercado nacional. Focamo-nos na fiabilidade, qualidade 
+              e no atendimento personalizado aos nossos clientes.
+            </p>
+            
+            <p class="about-description">
+              A nossa missão é fornecer sistemas de bombagem eficientes e duradouros, 
+              acompanhados de um serviço técnico de excelência que garante o funcionamento 
+              optimal das suas instalações.
+            </p>
+            
+            <div class="about-stats">
+              <div class="stat">
+                <div class="stat-value">500+</div>
+                <div class="stat-label">Instalações</div>
+              </div>
+              <div class="stat">
+                <div class="stat-value">15+</div>
+                <div class="stat-label">Anos de Experiência</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="services">
+      <div class="services-container">
+        <div class="section-header">
+          <h2 class="section-title">Os Nossos Serviços</h2>
+          <p class="section-subtitle">Soluções completas de bombagem para diferentes necessidades e aplicações</p>
+          <div class="section-divider"></div>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-image" style="background-image: url('Resources/sistema_casa.jpeg')"></div>
+            <div class="service-content">
+              <div class="service-header">
+                <i class="fas fa-home service-icon"></i>
+                <h3 class="service-title">Habitações</h3>
+              </div>
+              <p class="service-description">
+                Sistemas de bombagem para casas particulares, garantindo pressão adequada e fornecimento contínuo de água.
+              </p>
+              <ul class="service-features">
+                <li class="service-feature"><div class="feature-bullet"></div>Bombas de pressão</li>
+                <li class="service-feature"><div class="feature-bullet"></div>Sistemas automáticos</li>
+                <li class="service-feature"><div class="feature-bullet"></div>Manutenção preventiva</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-image" style="background-image: url('Resources/sistema_piscina.jpeg')"></div>
+            <div class="service-content">
+              <div class="service-header">
+                <i class="fas fa-water service-icon"></i>
+                <h3 class="service-title">Piscinas</h3>
+              </div>
+              <p class="service-description">
+                Equipamentos especializados para filtração, circulação e aquecimento de piscinas residenciais e comerciais.
+              </p>
+              <ul class="service-features">
+                <li class="service-feature"><div class="feature-bullet"></div>Bombas de filtração</li>
+                <li class="service-feature"><div class="feature-bullet"></div>Sistemas de aquecimento</li>
+                <li class="service-feature"><div class="feature-bullet"></div>Automação completa</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="service-card">
+            <div class="service-image" style="background-image: url('Resources/sistema_agricultura.jpeg')"></div>
+            <div class="service-content">
+              <div class="service-header">
+                <i class="fas fa-seedling service-icon"></i>
+                <h3 class="service-title">Agricultura</h3>
+              </div>
+              <p class="service-description">
+                Soluções robustas para irrigação agrícola, com sistemas eficientes e adaptados às necessidades do terreno.
+              </p>
+              <ul class="service-features">
+                <li class="service-feature"><div class="feature-bullet"></div>Bombas submersíveis</li>
+                <li class="service-feature"><div class="feature-bullet"></div>Sistemas de irrigação</li>
+                <li class="service-feature"><div class="feature-bullet"></div>Controlo automático</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Additional Services -->
+        <div class="additional-services">
+          <h3 class="additional-services-title">Serviços Completos</h3>
+          
+          <div class="additional-services-grid">
+            <div class="additional-service">
+              <div class="additional-service-icon">
+                <i class="fas fa-cogs"></i>
+              </div>
+              <div class="additional-service-text">
+                <h4 class="additional-service-title">Instalação Profissional</h4>
+                <p class="additional-service-description">Montagem e configuração completa dos sistemas</p>
+              </div>
+            </div>
+            
+            <div class="additional-service">
+              <div class="additional-service-icon">
+                <i class="fas fa-wrench"></i>
+              </div>
+              <div class="additional-service-text">
+                <h4 class="additional-service-title">Manutenção Preventiva</h4>
+                <p class="additional-service-description">Serviços regulares para máximo desempenho</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Logos Carousel -->
+    <section class="brands-section">
+      <div class="brands-carousel">
+        <h4 class="brands-title">Marcas de Confiança</h4>
+        <div class="brands-wrapper">
+          <div class="brands-track">
+            <!-- First set of logos -->
+            <div class="brands-set">
+              <img src="https://eurobombas.com.br/wp-content/uploads/2023/07/logo.png" alt="Euro Bombas" class="brand-logo">
+              <img src="https://schneider.ind.br/css/images/schneider-logo.svg" alt="Schneider" class="brand-logo">
+              <img src="https://logos-world.net/wp-content/uploads/2022/07/Grundfos-Logo.png" alt="Grundfos" class="brand-logo">
+              <img src="https://www.dancor.com.br/wp-content/themes/area-structure/assets/images/logo.webp" alt="Dancor" class="brand-logo">
+              <img src="https://www.ebara.es/wp-content/uploads/2021/09/EBARA-logo-horizontal-200x81.jpg" alt="Ebara" class="brand-logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Jacuzzi_logo.svg/640px-Jacuzzi_logo.svg.png" alt="Jacuzzi" class="brand-logo">
+              <img src="https://eurobombas.com.br/wp-content/uploads/2023/07/logo.png" alt="Euro Bombas" class="brand-logo">
+              <img src="https://schneider.ind.br/css/images/schneider-logo.svg" alt="Schneider" class="brand-logo">
+              <img src="https://logos-world.net/wp-content/uploads/2022/07/Grundfos-Logo.png" alt="Grundfos" class="brand-logo">
+              <img src="https://www.dancor.com.br/wp-content/themes/area-structure/assets/images/logo.webp" alt="Dancor" class="brand-logo">
+              <img src="https://www.ebara.es/wp-content/uploads/2021/09/EBARA-logo-horizontal-200x81.jpg" alt="Ebara" class="brand-logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Jacuzzi_logo.svg/640px-Jacuzzi_logo.svg.png" alt="Jacuzzi" class="brand-logo">
+              <img src="https://eurobombas.com.br/wp-content/uploads/2023/07/logo.png" alt="Euro Bombas" class="brand-logo">
+              <img src="https://schneider.ind.br/css/images/schneider-logo.svg" alt="Schneider" class="brand-logo">
+              <img src="https://logos-world.net/wp-content/uploads/2022/07/Grundfos-Logo.png" alt="Grundfos" class="brand-logo">
+              <img src="https://www.dancor.com.br/wp-content/themes/area-structure/assets/images/logo.webp" alt="Dancor" class="brand-logo">
+              <img src="https://www.ebara.es/wp-content/uploads/2021/09/EBARA-logo-horizontal-200x81.jpg" alt="Ebara" class="brand-logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Jacuzzi_logo.svg/640px-Jacuzzi_logo.svg.png" alt="Jacuzzi" class="brand-logo">
+              <img src="https://eurobombas.com.br/wp-content/uploads/2023/07/logo.png" alt="Euro Bombas" class="brand-logo">
+              <img src="https://schneider.ind.br/css/images/schneider-logo.svg" alt="Schneider" class="brand-logo">
+              <img src="https://logos-world.net/wp-content/uploads/2022/07/Grundfos-Logo.png" alt="Grundfos" class="brand-logo">
+              <img src="https://www.dancor.com.br/wp-content/themes/area-structure/assets/images/logo.webp" alt="Dancor" class="brand-logo">
+              <img src="https://www.ebara.es/wp-content/uploads/2021/09/EBARA-logo-horizontal-200x81.jpg" alt="Ebara" class="brand-logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Jacuzzi_logo.svg/640px-Jacuzzi_logo.svg.png" alt="Jacuzzi" class="brand-logo">
+            </div>
+            <!-- Duplicate set for seamless loop -->
+            <div class="brands-set">
+              <img src="https://eurobombas.com.br/wp-content/uploads/2023/07/logo.png" alt="Euro Bombas" class="brand-logo">
+              <img src="https://schneider.ind.br/css/images/schneider-logo.svg" alt="Schneider" class="brand-logo">
+              <img src="https://logos-world.net/wp-content/uploads/2022/07/Grundfos-Logo.png" alt="Grundfos" class="brand-logo">
+              <img src="https://www.dancor.com.br/wp-content/themes/area-structure/assets/images/logo.webp" alt="Dancor" class="brand-logo">
+              <img src="https://www.ebara.es/wp-content/uploads/2021/09/EBARA-logo-horizontal-200x81.jpg" alt="Ebara" class="brand-logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Jacuzzi_logo.svg/640px-Jacuzzi_logo.svg.png" alt="Jacuzzi" class="brand-logo">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produtos" class="products">
+      <div class="products-container">
+        <div class="section-header">
+          <h2 class="section-title">Produtos em Destaque</h2>
+          <p class="section-subtitle">Equipamentos de alta qualidade das melhores marcas do mercado</p>
+          <div class="section-divider"></div>
+        </div>
+        
+                <!-- Product Categories -->
+                <div class="product-categories">
+                  <div class="category-card">
+                    <div class="category-image" style="background-image: url('Resources/bomba_centrifuga.jpeg')"></div>
+                    <div class="category-content">
+                      <h3 class="category-title">Bombas Centrífugas</h3>
+                      <p class="category-description">Ideais para aplicações domésticas e comerciais com excelente eficiência energética.</p>
+                      <ul class="category-features">
+                        <li class="category-feature"><i class="fas fa-star feature-star"></i>Alto rendimento</li>
+                        <li class="category-feature"><i class="fas fa-star feature-star"></i>Baixo consumo</li>
+                        <li class="category-feature"><i class="fas fa-star feature-star"></i>Durabilidade superior</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div class="category-card">
+                    <div class="category-image" style="background-image: url('Resources/bomba_imersa.jpeg')"></div>
+                    <div class="category-content">
+                      <h3 class="category-title">Bombas Submersíveis</h3>
+                      <p class="category-description">Perfeitas para poços profundos e aplicações agrícolas com grande capacidade de elevação.</p>
+                      <ul class="category-features">
+                        <li class="category-feature"><i class="fas fa-star feature-star"></i>Grande profundidade</li>
+                        <li class="category-feature"><i class="fas fa-star feature-star"></i>Resistente à corrosão</li>
+                        <li class="category-feature"><i class="fas fa-star feature-star"></i>Funcionamento silencioso</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div class="category-card">
+                    <div class="category-image" style="background-image: url('Resources/bomba_sistemapressao2.jpeg')"></div>
+                    <div class="category-content">
+                      <h3 class="category-title">Sistemas de Pressão</h3>
+                      <p class="category-description">Conjuntos completos com depósito e controlo automático para pressão constante.</p>
+                      <ul class="category-features">
+                        <li class="category-feature"><i class="fas fa-star feature-star"></i>Pressão constante</li>
+                        <li class="category-feature"><i class="fas fa-star feature-star"></i>Controlo automático</li>
+                        <li class="category-feature"><i class="fas fa-star feature-star"></i>Fácil instalação</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+        
+        <!-- Featured Products Grid -->
+        <div id="featured-products-grid" class="featured-products">
+          
+        </div>
+        
+        <!-- Calculator Call-to-Action -->
+        <div class="calculator-cta">
+          <div class="calculator-cta-content">
+            <h3 class="calculator-cta-title">Não sabe qual sistema é melhor para si?</h3>
+            <p class="calculator-cta-description">Use o nosso assistente para encontrar a solução perfeita para as suas necessidades</p>
+            <button id="show-calculator" class="calculator-cta-button">
+              <i class="fas fa-calculator calculator-cta-icon"></i>
+              Experimentar o nosso assistente
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculadora" class="calculator hidden">
+      <div class="calculator-container">
+        <div class="section-header">
+          <h2 class="section-title">Assistente de Orçamento</h2>
+          <p class="section-subtitle">Responda às perguntas para obter uma recomendação personalizada</p>
+          <div class="section-divider"></div>
+        </div>
+        
+        <div class="calculator-card">
+          <div class="calculator-content">
+            <form id="calculator-form" class="calculator-form">
+              <!-- Step 1: Application Type -->
+              <div class="calculator-step">
+                <h3 class="step-title">1. Tipo de Aplicação</h3>
+                <div class="application-types">
+                  <label class="application-type">
+                    <input type="radio" name="application" value="domestic" class="application-input">
+                    <div class="application-content">
+                      <i class="fas fa-home application-icon"></i>
+                      <h4 class="application-title">Doméstica</h4>
+                      <p class="application-description">Casa, apartamento</p>
+                    </div>
+                  </label>
+                  
+                  <label class="application-type">
+                    <input type="radio" name="application" value="pool" class="application-input">
+                    <div class="application-content">
+                      <i class="fas fa-water application-icon"></i>
+                      <h4 class="application-title">Piscina</h4>
+                      <p class="application-description">Filtração, circulação</p>
+                    </div>
+                  </label>
+                  
+                  <label class="application-type">
+                    <input type="radio" name="application" value="agriculture" class="application-input">
+                    <div class="application-content">
+                      <i class="fas fa-seedling application-icon"></i>
+                      <h4 class="application-title">Agricultura</h4>
+                      <p class="application-description">Irrigação, rega</p>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              
+              <!-- Step 2: Domestic Application Questions -->
+              <div id="domestic-questions" class="calculator-step hidden">
+                <h3 class="step-title">2. Informações sobre a sua Casa</h3>
+                <div class="technical-requirements">
+                  <div class="input-group">
+                    <label for="water-source" class="input-label">Qual a origem da água?</label>
+                    <select id="water-source" class="form-select">
+                      <option value="">Selecionar...</option>
+                      <option value="borehole">Furo</option>
+                      <option value="well">Poço</option>
+                      <option value="tank">Depósito</option>
+                      <option value="mains">Rede Pública</option>
+                    </select>
+                  </div>
+                  
+                  <!-- Conditional: Depth question for borehole or well -->
+                  <div id="depth-question" class="input-group hidden">
+                    <label for="depth" class="input-label">Qual a profundidade? (metros)</label>
+                    <input id="depth" type="number" min="1" max="200" placeholder="Ex: 30" class="form-input">
+                  </div>
+                  
+                  <div class="input-group">
+                    <label class="input-label">Para que precisa da água?</label>
+                    <div class="checkbox-group">
+                      <input type="checkbox" id="pressure-taps" class="form-checkbox">
+                      <label for="pressure-taps" class="checkbox-label">Pressão para as torneiras de casa</label>
+                    </div>
+                    <div class="checkbox-group">
+                      <input type="checkbox" id="small-garden" class="form-checkbox">
+                      <label for="small-garden" class="checkbox-label">Rega de jardim (pequeno/médio)</label>
+                    </div>
+                    <div class="checkbox-group">
+                      <input type="checkbox" id="large-garden" class="form-checkbox">
+                      <label for="large-garden" class="checkbox-label">Rega de jardim (grande/relvado)</label>
+                    </div>
+                    <div class="checkbox-group">
+                      <input type="checkbox" id="pool-filling" class="form-checkbox">
+                      <label for="pool-filling" class="checkbox-label">Encher uma piscina</label>
+                    </div>
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="floors" class="input-label">Quantos pisos tem a sua casa?</label>
+                    <select id="floors" class="form-select">
+                      <option value="">Selecionar...</option>
+                      <option value="1">1 (Rés-do-chão)</option>
+                      <option value="2">2 Pisos</option>
+                      <option value="3">3 ou mais Pisos</option>
+                    </select>
+                  </div>
+                  
+                  <div class="input-group">
+                    <label class="input-label">Deseja pressão constante em todas as torneiras?</label>
+                    <div class="checkbox-group">
+                      <input type="checkbox" id="constant-pressure" class="form-checkbox">
+                      <label for="constant-pressure" class="checkbox-label">Sim, quero um sistema automático (com pressostato/inversor)</label>
+                    </div>
+                    <div class="checkbox-group">
+                      <input type="checkbox" id="not-priority" class="form-checkbox">
+                      <label for="not-priority" class="checkbox-label">Não é prioritário</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Step 2: Pool Application Questions -->
+              <div id="pool-questions" class="calculator-step hidden">
+                <h3 class="step-title">2. Informações sobre a sua Piscina</h3>
+                <div class="technical-requirements">
+                  <div class="input-group">
+                    <label for="pool-volume" class="input-label">Qual o volume da sua piscina (em m³)?</label>
+                    <input id="pool-volume" type="number" min="1" max="1000" placeholder="Ex: 50" class="form-input">
+                    <p class="helper-text">Se não souber, indique as dimensões: Comprimento x Largura x Profundidade Média</p>
+                  </div>
+                  
+                  <div class="input-group">
+                    <label class="input-label">Para que função é a bomba?</label>
+                    <div class="checkbox-group">
+                      <input type="checkbox" id="filtration" class="form-checkbox">
+                      <label for="filtration" class="checkbox-label">Filtração e circulação (bomba principal)</label>
+                    </div>
+                    <div class="checkbox-group">
+                      <input type="checkbox" id="heating" class="form-checkbox">
+                      <label for="heating" class="checkbox-label">Aquecimento (bomba de calor)</label>
+                    </div>
+                    <div class="checkbox-group">
+                      <input type="checkbox" id="water-effects" class="form-checkbox">
+                      <label for="water-effects" class="checkbox-label">Efeitos de água (cascatas, fontes, hidromassagem)</label>
+                    </div>
+                    <div class="checkbox-group">
+                      <input type="checkbox" id="cleaning" class="form-checkbox">
+                      <label for="cleaning" class="checkbox-label">Limpeza (ligação para aspirador/robot)</label>
+                    </div>
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="pump-location" class="input-label">Onde ficará a bomba?</label>
+                    <select id="pump-location" class="form-select">
+                      <option value="">Selecionar...</option>
+                      <option value="above">Acima do nível da água</option>
+                      <option value="below">Abaixo do nível da água</option>
+                    </select>
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="pool-distance" class="input-label">Qual a distância aproximada da bomba à piscina? (metros)</label>
+                    <input id="pool-distance" type="number" min="1" max="100" placeholder="Ex: 10" class="form-input">
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Step 2: Agriculture Application Questions -->
+              <div id="agriculture-questions" class="calculator-step hidden">
+                <h3 class="step-title">2. Informações sobre a sua Exploração Agrícola</h3>
+                <div class="technical-requirements">
+                  <div class="input-group">
+                    <label for="agri-water-source" class="input-label">Qual a origem da água?</label>
+                    <select id="agri-water-source" class="form-select">
+                      <option value="">Selecionar...</option>
+                      <option value="borehole">Furo</option>
+                      <option value="well">Poço</option>
+                      <option value="stream">Ribeiro ou Barragem</option>
+                      <option value="large-tank">Depósito de grande capacidade</option>
+                    </select>
+                  </div>
+                  
+                  <div class="input-group">
+                    <label class="input-label">Qual o tipo de rega que utiliza?</label>
+                    <div class="checkbox-group">
+                      <input type="checkbox" id="drip" class="form-checkbox">
+                      <label for="drip" class="checkbox-label">Gota-a-gota</label>
+                    </div>
+                    <div class="checkbox-group">
+                      <input type="checkbox" id="sprinkler" class="form-checkbox">
+                      <label for="sprinkler" class="checkbox-label">Aspersão ou micro-aspersão</label>
+                    </div>
+                    <div class="checkbox-group">
+                      <input type="checkbox" id="surface" class="form-checkbox">
+                      <label for="surface" class="checkbox-label">Rega de superfície (inundação)</label>
+                    </div>
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="irrigation-area" class="input-label">Qual a área total a regar?</label>
+                    <div class="input-row">
+                      <input id="irrigation-area" type="number" min="1" max="1000" placeholder="Ex: 5" class="form-input" style="flex: 1;">
+                      <select id="area-unit" class="form-select" style="flex: 1; margin-left: 1rem;">
+                        <option value="hectares">hectares</option>
+                        <option value="square-meters">m²</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="elevation" class="input-label">Existe um desnível (subida) entre a água e a zona de rega?</label>
+                    <select id="elevation" class="form-select">
+                      <option value="">Selecionar...</option>
+                      <option value="none">Não</option>
+                      <option value="up-to-10">Sim, até 10 metros</option>
+                      <option value="over-10">Sim, mais de 10 metros</option>
+                    </select>
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="electricity" class="input-label">Existe eletricidade no local da bomba?</label>
+                    <select id="electricity" class="form-select">
+                      <option value="">Selecionar...</option>
+                      <option value="single-phase">Sim (monofásica)</option>
+                      <option value="three-phase">Sim (trifásica)</option>
+                      <option value="none">Não (necessito de solução solar ou a gerador)</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Step 3: Additional Service Details -->
+              <div class="calculator-step">
+                <h3 class="step-title">3. Detalhes do Serviço</h3>
+                <div class="additional-info">
+                  <div class="checkbox-group">
+                    <input type="checkbox" id="installation-service" class="form-checkbox">
+                    <label for="installation-service" class="checkbox-label">Incluir serviço de instalação</label>
+                    <input type="checkbox" id="visit-service" class="form-checkbox">
+                    <label for="visit-service" class="checkbox-label">Visita ao local para avaliação</label>
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="observations" class="input-label">Observações ou detalhes importantes:</label>
+                    <textarea id="observations" rows="4" placeholder="Ex: Horário disponível para instalação, restrições no local, etc." class="form-textarea"></textarea>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="calculator-actions">
+                <button type="button" id="calculate-button" class="calculate-button">
+                  <i class="fas fa-paper-plane button-icon"></i>
+                  Pedir Orçamento Gratuito
+                </button>
+                <button type="button" id="analyze-button" class="analyze-button">
+                  <i class="fas fa-search button-icon"></i>
+                  Submeter para Análise
+                </button>
+                <button type="button" id="reset-button" class="reset-button">
+                  Limpar Formulário
+                </button>
+              </div>
+            </form>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+      <div class="contact-container">
+        <div class="section-header">
+          <h2 class="section-title">Contacto e Orçamento</h2>
+          <p class="section-subtitle">Solicite um orçamento personalizado ou esclarecimento de dúvidas</p>
+          <div class="section-divider"></div>
+        </div>
+        
+        <div class="contact-content">
+          <!-- Contact Form -->
+          <div class="contact-card">
+            <div class="contact-card-content">
+              <h3 class="contact-card-title">Envie-nos uma Mensagem</h3>
+              
+              <form id="contact-form" class="contact-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name" class="form-label">Nome </label>
+                    <input id="name" type="text" class="form-input" title="Por favor, insira o seu nome" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="location" class="form-label">Localidade</label>
+                    <input id="location" type="text" class="form-input">
+                  </div>
+                </div>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email" class="form-label">Email <span id="email-required" class="required-indicator">*</span></label>
+                    <input id="email" type="email" class="form-input" title="Por favor, insira um email válido">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="phone" class="form-label">Telefone <span id="phone-required" class="required-indicator">*</span></label>
+                    <input id="phone" type="tel" class="form-input" title="Por favor, insira um número de telefone válido">
+                  </div>
+                </div>
+                
+                <!-- Contact Preference -->
+                <div class="form-group">
+                  <label class="form-label">Forma de Contacto Preferida *</label>
+                  <div class="contact-preference">
+                    <label class="preference-option">
+                      <input type="radio" name="contactPreference" value="email" class="preference-input" checked>
+                      <span>Email</span>
+                    </label>
+                    <label class="preference-option">
+                      <input type="radio" name="contactPreference" value="phone" class="preference-input">
+                      <span>Telefone</span>
+                    </label>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="service" class="form-label">Tipo de Serviço</label>
+                  <select id="service" class="form-select">
+                    <option value="">Selecionar...</option>
+                    <option value="installation">Instalação Nova</option>
+                    <option value="maintenance">Manutenção</option>
+                    <option value="repair">Reparação</option>
+                    <option value="consultation">Consultoria</option>
+                    <option value="quote">Orçamento Personalizado</option>
+                    <option value="other">Outros</option>
+                  </select>
+                </div>
+                
+                <!-- Priority Selection -->
+                <div class="form-group">
+                  <label class="form-label">Prioridade</label>
+                  <div class="segmented-control">
+                    <input type="radio" id="priority-urgent" name="priority" value="urgent">
+                    <label for="priority-urgent">Urgente</label>
+                    
+                    <input type="radio" id="priority-normal" name="priority" value="normal" checked>
+                    <label for="priority-normal">Normal</label>
+                    
+                    <input type="radio" id="priority-low" name="priority" value="low">
+                    <label for="priority-low">Baixa</label>
+                  </div>
+                </div>
+                
+                <!-- Client Type Selection -->
+                <div class="form-group">
+                  <label class="form-label">Tipo de Cliente</label>
+                  <div class="segmented-control secondary">
+                    <input type="radio" id="client-domestic" name="clientType" value="domestic" checked>
+                    <label for="client-domestic">Doméstico</label>
+                    
+                    <input type="radio" id="client-business" name="clientType" value="business">
+                    <label for="client-business">Empresa</label>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="message" class="form-label">Mensagem <span id="message-required" class="required-indicator">*</span></label>
+                  <textarea id="message" rows="4" placeholder="Descreva as suas necessidades..." class="form-textarea"></textarea>
+                </div>
+                
+                <button type="submit" id="submit-contact" class="submit-button">
+                  <i class="fas fa-paper-plane button-icon"></i>
+                  Enviar Mensagem
+                </button>
+              </form>
+            </div>
+          </div>
+          
+          <!-- Contact Information -->
+          <div class="contact-info">
+            <div class="info-section">
+              <h3 class="info-section-title">Informações de Contacto</h3>
+              <div class="contact-details">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4 class="contact-item-title">Morada</h4>
+                    <p class="contact-item-content">R. da Tesouraria 29</p>
+                    <p class="contact-item-content">4515-597 Melres, Porto, Portugal</p>
+                  </div>
+                </div>
+                
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4 class="contact-item-title">Telefone</h4>
+                    <p class="contact-item-content">
+                      +351 966 663 480
+                      <a href="tel:+351966663480" class="phone-call-icon">
+                        <i class="fas fa-phone"></i>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4 class="contact-item-title">Email</h4>
+                    <p class="contact-item-content">geral@mgmotores.pt</p>
+                  </div>
+                </div>
+                
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4 class="contact-item-title">Horário</h4>
+                    <p class="contact-item-content">Segunda a Sexta: 8h00 - 18h00</p>
+                    <p class="contact-item-content">Sábado: 9h00 - 13h00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Service Areas -->
+            <div class="info-section">
+              <h3 class="info-section-title">Áreas de Serviço</h3>
+              <div class="service-areas">
+                <p class="service-areas-description">
+                  Prestamos serviços em todo o território nacional, com especial foco em:
+                </p>
+                <div class="areas-list">
+                  <div class="area-item">
+                    <i class="fas fa-check-circle area-icon"></i>
+                    Porto
+                  </div>
+                  <div class="area-item">
+                    <i class="fas fa-check-circle area-icon"></i>
+                    Gaia
+                  </div>
+                  <div class="area-item">
+                    <i class="fas fa-check-circle area-icon"></i>
+                    Gondomar
+                  </div>
+                  <div class="area-item">
+                    <i class="fas fa-check-circle area-icon"></i>
+                    Valongo
+                  </div>
+                  <div class="area-item">
+                    <i class="fas fa-check-circle area-icon"></i>
+                    Grande Porto
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="footer-column">
+            <div class="footer-brand">
+              <div class="footer-brand-content">
+                <i class="fas fa-tint footer-icon"></i>
+                <span class="footer-title">MGMotores</span>
+              </div>
+            </div>
+            <div class="footer-description">
+              <p>Especialistas em soluções de bombagem de água.</p>
+              <p>Experiência, compromisso e qualidade.</p>
+            </div>
+          </div>
+          
+          <!-- Services -->
+          <div class="footer-column">
+            <h4 class="footer-column-title">Serviços</h4>
+            <ul class="footer-links">
+              <li><button class="footer-link" data-scroll-to="servicos">Instalação e Manutenção</button></li>
+              <li><button class="footer-link" data-scroll-to="servicos">Bombagem Doméstica</button></li>
+              <li><button class="footer-link" data-scroll-to="servicos">Sistemas de Piscinas</button></li>
+              <li><button class="footer-link" data-scroll-to="servicos">Irrigação Agrícola</button></li>
+            </ul>
+          </div>
+          
+          <!-- Products -->
+          <div class="footer-column">
+            <h4 class="footer-column-title">Produtos</h4>
+            <ul class="footer-links">
+              <li><button class="footer-link" data-scroll-to="produtos">Bombas Centrífugas</button></li>
+              <li><button class="footer-link" data-scroll-to="produtos">Bombas Submersíveis</button></li>
+              <li><button class="footer-link" data-scroll-to="produtos">Sistemas de Pressão</button></li>
+              <li><button class="footer-link" data-scroll-to="produtos">Acessórios</button></li>
+            </ul>
+          </div>
+          
+          <!-- Contact -->
+          <div class="footer-column">
+            <h4 class="footer-column-title">Contacto</h4>
+            <div class="footer-contact">
+              <p class="footer-contact-item">+351 966 63 480</p>
+              <p class="footer-contact-item">geral@mgmotores.pt</p>
+              <p class="footer-contact-item">R. da Tesouraria 29, 4515-597 Melres - Porto - Portugal</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom">
+          <p class="footer-copyright">
+            &copy; 2024 MGMotores. Todos os direitos reservados. | 
+            <button class="footer-bottom-link">Política de Privacidade</button> | 
+            <button class="footer-bottom-link">Termos de Serviço</button>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Product Details Popup -->
+    <div id="product-popup" class="popup-overlay hidden">
+      <div class="popup-content">
+        <button id="popup-close" class="popup-close-button">
+          <i class="fas fa-times"></i>
+        </button>
+        <div id="popup-details" class="popup-details-grid">
+          <!-- Dynamic content will be injected here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="scripts/supabaseClient.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
