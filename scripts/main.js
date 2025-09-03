@@ -568,6 +568,12 @@ document.addEventListener('DOMContentLoaded', () => {
       contactForm.addEventListener('submit', (event) => {
         event.preventDefault();
         
+        // Hide the contact prompt message if it exists
+        const messageElement = document.getElementById('contact-prompt-message');
+        if (messageElement) {
+          messageElement.style.display = 'none';
+        }
+        
         // Perform validation
         if (!validateForm()) {
           // If validation fails, stop form submission
@@ -623,7 +629,7 @@ document.addEventListener('DOMContentLoaded', () => {
           from_location: location,
           from_email: email,
           from_phone: phone,
-          message: message,
+          message: message + `\n\n--- Detalhes do Contacto ---\nEmail: ${email}\nTelefone: ${phone}\nPreferência de Contacto: ${contactPreferenceLabels[contactPreference] || contactPreference}\nTipo de Serviço: ${serviceLabels[service] || service}\nPrioridade: ${priorityLabels[priority] || priority}\nTipo de Cliente: ${clientTypeLabels[clientType] || clientType}`,
           contact_preference: contactPreferenceLabels[contactPreference] || contactPreference,
           service_type: serviceLabels[service] || service,
           priority: priorityLabels[priority] || priority,
@@ -770,9 +776,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
       const viewDetailsButton = card.querySelector('.view-details-btn');
       if(viewDetailsButton) {
-          console.log(`Attaching click listener for product: ${product.name}`);
           viewDetailsButton.addEventListener('click', (e) => {
-            console.log(`"Ver Detalhes" button clicked for: ${product.name}`);
             e.stopPropagation();
             showProductPopup(product);
           });
@@ -782,24 +786,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   async function showProductPopup(product) {
-    console.log('showProductPopup called for:', product);
     
     const productPopupEl = document.getElementById('product-popup');
     const popupDetailsEl = document.getElementById('popup-details');
 
-    console.log('productPopup element:', productPopupEl);
-    console.log('popupDetails element:', popupDetailsEl);
-
     if (!popupDetailsEl || !productPopupEl) {
-      console.error('Popup elements not found! Bailing out.');
       return;
     }
 
     try {
       popupDetailsEl.innerHTML = '<p>A carregar detalhes do produto...</p>';
-      console.log('Attempting to show popup...');
       productPopupEl.classList.remove('hidden');
-      console.log('Popup should be visible now. classList:', productPopupEl.classList);
 
       const additionalImages = await fetchProductImages(product.id);
       
